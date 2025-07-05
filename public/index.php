@@ -1,13 +1,10 @@
 <?php
 include '../db_connect.php';
 
-// Jika form disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Tidak dilakukan validasi atau filtering input
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Query tanpa prepared statement (rentan SQL Injection)
     $query = "SELECT * FROM userdata WHERE username = '$username' AND password = '$password'";
     $result = mysqli_query($conn, $query);
 
